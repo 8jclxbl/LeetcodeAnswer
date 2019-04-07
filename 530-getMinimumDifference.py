@@ -29,9 +29,9 @@ class Solution:
         bstList = self.bst2List(root)
         length = len(bstList)
         i = 1
-        minD = abs(bstList[0] - bst2List[1])
+        minD = abs(bstList[0] - bstList[1])
         while i < length - 1:
-            temp = abs(bstList[i] - bst2List[i + 1])
+            temp = abs(bstList[i] - bstList[i + 1])
             if temp < minD:
                 minD = temp
             i += 1
@@ -48,6 +48,6 @@ class Solution:
         else:
             right = []
 
-        return left + [root] + right
+        return left + [root.val] + right
 
     
