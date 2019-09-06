@@ -23,7 +23,6 @@ class Solution:
                     temp.append(intervals[i])
                     i += 1
                 
-            print(temp)
             if not changed:return intervals
             intervals = temp
 
