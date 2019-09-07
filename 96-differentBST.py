@@ -16,5 +16,5 @@ class Solution:
             
 if __name__ == "__main__":
     s = Solution()
-    print(s.numTrees(4))
+    print(s.numTrees(5))
     

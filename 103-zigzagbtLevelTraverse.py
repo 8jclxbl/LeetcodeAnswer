@@ -55,6 +55,33 @@ class Solution:
             level += 1
         return res
 
+class Solution_a:
+    def zigzagLevelOrder(self, root):
+        if not root: return []
+        queue = [root]
+        res = [[root.val]]
+        level = 1
+        while queue:
+            temp = []
+            cur_res = []
+            while queue:
+                cur = queue.pop(0)
+
+                if cur.left:
+                    temp.append(cur.left)
+                    cur_res.append(cur.left.val)
+
+                if cur.right:
+                    temp.append(cur.right)
+                    cur_res.append(cur.right.val)
+                
+            queue = temp
+            if temp:
+                if level%2 == 1:cur_res = cur_res[::-1]
+                res.append(cur_res)
+            level += 1
+        return res
+
 if __name__ == "__main__":
     #test = Tree([1,2,3,4,None,None,5])
     test = Tree([3,9,20,None,None,15,7])
