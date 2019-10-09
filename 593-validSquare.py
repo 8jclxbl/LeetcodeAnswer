@@ -17,16 +17,11 @@ class Solution:
         if len(count) != 2:
             return False
         
-        count1,count2 = count.items()
-        if count1[0] * 2 == count2[0]:
-            if count1[1] == 4 and count2[1] == 2:
-                return True
-        
-        if count2[0] * 2 == count1[0]:
-            if count2[1] == 4 and count1[1] == 2:
-                return True
-
-        return False
+        c1,c2 = count.values()
+        if (c1 == 4 and c2 == 2) or (c1 == 2 and c2 == 4):
+            return True
+        else:
+            return False
                 
     @staticmethod
     def distanceSquare(a,b):
